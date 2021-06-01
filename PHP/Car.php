@@ -1,10 +1,10 @@
 <?php
 require_once('Account.php');
 class Car {
-	public $id;
-	public $license;
-	public $driver;
-	public $passenger;
+	protected $id;
+	protected $license;
+	protected $driver;
+	protected $passenger;
 
 	public function	__construct($license,$driver) {
 		$this->license = $license
@@ -13,6 +13,19 @@ class Car {
 
 	public function printDataCar() {
 		echo "license: $this->license conductor:".$this->driver->name;
+	}
+
+	public function getPassenger() {
+		return $this->passenger;
+	}
+
+	public function setPassenger($passenger) {
+		if ($passenger == 4) {
+			$this->passenger = $passenger;
+		}
+		else {
+			echo "Necesitas asignar 4 pasageros";
+		}
 	}
 }
 ?>
